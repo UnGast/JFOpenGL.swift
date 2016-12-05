@@ -1,3 +1,4 @@
+// Copyright (c) 2016 Jason Frame
 // Copyright (c) 2015-2016 David Turnbull
 // Copyright (c) 2013-2016 The Khronos Group Inc.
 //
