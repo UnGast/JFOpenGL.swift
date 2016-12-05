@@ -21,13 +21,13 @@
 
 
 public func glShaderSource(_ shader: GLuint, _ source: String) {
-	source.withCString({ (data) in
-		glShaderSource_P(shader, 1, [UnsafePointer(data)], nil)
-	})
+    source.withCString({ (data) in
+        glShaderSource_P(shader, 1, [UnsafePointer(data)], nil)
+    })
 }
 
 public func glShaderSource(shader: GLuint, source: String) {
-	source.withCString({ (data) in
-		glShaderSource_P(shader, 1, [UnsafePointer(data)], nil)
-	})	
+    source.withCString({ (data) in
+        glShaderSource_P(shader, 1, [UnsafePointer(data)], nil)
+    })  
 }
