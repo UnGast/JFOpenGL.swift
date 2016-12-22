@@ -45,3 +45,12 @@ glViewport(x: 0, y: 0, width: 800, height: 600)
 This library provides you with direct calls to the OpenGL functions. There's
 no translation layer required to provide the syntactical sugar. Because Swift has first-class
 support for working with C, there's no performance penalty for crossing languages.
+
+## API
+
+All OpenGL functions are available.
+
+In addition, there are a couple of helper functions for dealing with shader source code:
+
+#### `glShaderSource(_ shader: GLuint, _ source: String)`
+#### `glShaderSource(shader: GLuint, source: String)`
