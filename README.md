@@ -1,19 +1,22 @@
-# SwiftGL OpenGL
+# JFOpenGL
+
+OpenGL bindings for Swift with dynamic loading.
+
+This code is based on David Turnbull's fiendishly clever [SGLOpenGL](https://github.com/SwiftGL/OpenGL); I can't take any credit for any of the smart stuff going on here, all I did was make it work with Swift 3 and made the code-generation scripts compatible with Linux.
 
 To use, include dependency in your `Package.swift`:
 ```swift
 let package = Package(
     dependencies: [
-        .Package(url: "https://github.com/SwiftGL/OpenGL.git", majorVersion: 1)
+        .Package(url: "https://github.com/jaz303/JFOpenGL.git", majorVersion: 3)
     ]
 )
 ```
-Then `import SGLOpenGL` in your swift file.
-
+Then `import JFOpenGL` in your swift file.
 
 ## Getting Started
 
-You can't use OpenGL until you can call its functions. The SwiftGL OpenGL loader
+You can't use OpenGL until you can call its functions. This OpenGL loader
 imports all the functions up to OpenGL 4.5. Platform differences are abstracted
 away. There's nothing to initialize and no C code. 100% easy. 100% Swift.
 
@@ -24,7 +27,7 @@ glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
 glTexParameteri(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_S), GLint(GL_MIRRORED_REPEAT))
 ```
 You have to cast everything. Not fun. This is a result of how Swift translates C header files.
-Because SwiftGL loader is specialized for Swift, all that casting is a thing of the past.
+Because this library is specialized for Swift, all that casting is a thing of the past.
 ```swift
 glDepthMask(false)
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
@@ -39,6 +42,6 @@ glTexParameteri(target: GL_TEXTURE_2D, pname: GL_TEXTURE_WRAP_S, param: GL_MIRRO
 glViewport(x: 0, y: 0, width: 800, height: 600)
 ```
 
-The SwiftGL OpenGL loader provides you with direct calls to the OpenGL functions. There's
+This library provides you with direct calls to the OpenGL functions. There's
 no translation layer required to provide the syntactical sugar. Because Swift has first-class
 support for working with C, there's no performance penalty for crossing languages.
